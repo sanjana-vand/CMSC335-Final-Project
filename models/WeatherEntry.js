@@ -32,10 +32,6 @@ const WeatherEntrySchema = new mongoose.Schema({
   visibility: { 
     type: Number, 
     required: false 
-  },
-  date: { 
-    type: Date, 
-    default: Date.now 
   }
 });
 

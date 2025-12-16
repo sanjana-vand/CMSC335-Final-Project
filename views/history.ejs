@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Saved Searches</title>
-  <link rel="stylesheet" href="/css/style.css">
+  
+   <!-- Google Font -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+   rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
   <nav class="navbar">
-    <h1>🌦 Weather App!</h1>
+    <h1> Weather App! 🌦 </h1>
     <h2>Check the current weather anywhere in the world!</h2>
   </nav>
 
@@ -37,9 +42,6 @@
               <tr>
                 <td colspan="7">No saved searches yet.</td>
               </tr>
-            <tr>
-              <td colspan="3">No saved searches yet.</td>
-            </tr>
           <% } else { %>
             <% entries.forEach(entry => { %>
               <tr>
