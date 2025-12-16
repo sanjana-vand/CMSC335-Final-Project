@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saved Searches</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>🌦 Weather App!</h1>
+    <h2>Check the current weather anywhere in the world!</h2>
+  </nav>
+
+  <div class="container">
+    <form action="/clear" method="POST" class="clear-form">
+      <button class="danger">Clear All History</button>
+    </form>
+
+    <div class="card">
+      <h2>Saved Weather Searches</h2>
+
+      <table class="weather-table">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Temperature</th>
+            <th>Feels Like </th>
+            <th>Humidity</th>
+            <th>Wind</th>
+            <th>Visibility</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <% if (entries.length === 0) { %>
+              <tr>
+                <td colspan="7">No saved searches yet.</td>
+              </tr>
+            <tr>
+              <td colspan="3">No saved searches yet.</td>
+            </tr>
+          <% } else { %>
+            <% entries.forEach(entry => { %>
+              <tr>
+                <td><%= entry.city %></td>
+                <td><%= entry.temperature %> °C</td>
+                <td><%= entry.feelslike %> °C</td>
+                <td><%= entry.humidity %> %</td>
+                <td><%= entry.wind_speed %> km/h (<%= entry.wind_dir %>)</td>
+                <td><%= entry.visibility %> km</td>
+                <td><%= entry.description %></td>
+              </tr>
+            <% }) %>
+          <% } %>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 1rem">
+        <a href="/">Home</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
